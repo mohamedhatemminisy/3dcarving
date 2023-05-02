@@ -61,6 +61,40 @@
             </li>
             @endcan
 
+            @canany(['customers.create', 'customers.index'])
+            <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title" data-i18n="nav.horz_nav.main">{{trans('admin.customers')}}</span></a>
+                <ul class="menu-content">
+                    @can('customers.create')
+                    <li><a class="menu-item" href="{{route('customers.create')}}" data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                            {{trans('admin.create_customer')}}</a>
+                    </li>
+                    @endcan
+                    @can('customers.index')
+                    <li><a class="menu-item" href="{{route('customers.index')}}" data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                            {{trans('admin.show_customers')}}</a>
+                    </li>
+                    @endcan
+                </ul>
+            </li>
+            @endcan
+
+            @canany(['units.create', 'units.index'])
+            <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title" data-i18n="nav.horz_nav.main">{{trans('admin.units')}}</span></a>
+                <ul class="menu-content">
+                    @can('units.create')
+                    <li><a class="menu-item" href="{{route('units.create')}}" data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                            {{trans('admin.create_unit')}}</a>
+                    </li>
+                    @endcan
+                    @can('units.index')
+                    <li><a class="menu-item" href="{{route('units.index')}}" data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                            {{trans('admin.show_units')}}</a>
+                    </li>
+                    @endcan
+                </ul>
+            </li>
+            @endcan
+
         </ul>
     </div>
 </div>

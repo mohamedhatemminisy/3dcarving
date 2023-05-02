@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('whatsapp');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->date('last_order_date')->nullable();
+            $table->integer('added_by')->unsigned();
+            $table->foreign('added_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

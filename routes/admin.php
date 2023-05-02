@@ -31,6 +31,10 @@ Route::group([
         Route::resource('users', 'App\Http\Controllers\Dashboard\UserController');
         Route::resource('roles', 'App\Http\Controllers\Dashboard\RolesController');
         Route::resource('permissions', 'App\Http\Controllers\Dashboard\PermissionsController');
+        Route::resource('customers', 'App\Http\Controllers\Dashboard\CustomersController');
+        Route::resource('units', 'App\Http\Controllers\Dashboard\UnitsController');
+
+        
         Route::get('profile/edit', 'App\Http\Controllers\Dashboard\ProfileController@editProfile')
             ->name('edit.profile');
         Route::put('profile/update', 'App\Http\Controllers\Dashboard\ProfileController@updateprofile')

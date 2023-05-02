@@ -42,8 +42,12 @@ return [
     'coun_not_found' => 'Data not found',
     'detelted_sucess' => 'Data deleted successfully',
     'try_again'       => 'There is a problem you can try in other time',
-
-
+    'customers'      => 'Customers',
+    'create_customer'=> 'Create Customer',
+    'show_customers' => 'Show Customers',
+    'units'          => 'Units',
+    'create_unit'    => 'Create Unit',
+    'show_units'     => 'Show Units',
     'error_message' => [
         'slug_unique'           =>  'slug must be unique',
         'phone_required'        =>  'phone is required',
@@ -113,6 +117,8 @@ return [
         'shipping_pice_required' => 'shipping pice required',
         'shipping_pice_numeric' => 'shipping pice must be numeric',
         'shipping_pice_min' => 'The shipping pice must be at least 0.',
+        'address_required' => 'Address required',
+        'whatsapp_required' => 'Whatsapp required',
     ],
     'shipping_pice_added' => 'shipping pice added',
     'tests'          => 'Tests',
