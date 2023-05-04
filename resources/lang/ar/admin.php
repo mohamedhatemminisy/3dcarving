@@ -48,6 +48,9 @@ return [
     'coun_not_found' => 'البيانات غير موجوده',
     'detelted_sucess' => 'تم حذف البيانات بنجاح',
     'try_again'       => 'توجد مشكلة ما يمكن المحاولة في وقت لاحق',
+    'machines'        => 'الآلات',
+    'create_machine'  => 'اضافة الآلة',
+    'show_machines'   => 'عرض الآلات',
 
     'error_message' => [
         'slug_unique'           =>  'هذا الاسم موجود من قبل',

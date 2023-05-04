@@ -48,6 +48,10 @@ return [
     'units'          => 'Units',
     'create_unit'    => 'Create Unit',
     'show_units'     => 'Show Units',
+    'machines'        => 'Machines',
+    'create_machine'  => 'Create Machine',
+    'show_machines'   => 'Show Machines',
+
     'error_message' => [
         'slug_unique'           =>  'slug must be unique',
         'phone_required'        =>  'phone is required',

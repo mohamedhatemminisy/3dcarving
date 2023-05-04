@@ -34,6 +34,7 @@ Route::group([
         Route::resource('customers', 'App\Http\Controllers\Dashboard\CustomersController');
         Route::resource('units', 'App\Http\Controllers\Dashboard\UnitsController');
         Route::resource('categories', 'App\Http\Controllers\Dashboard\CategoriesController');
+        Route::resource('machines', 'App\Http\Controllers\Dashboard\MachinesController');
 
         
         Route::get('profile/edit', 'App\Http\Controllers\Dashboard\ProfileController@editProfile')
