@@ -33,6 +33,7 @@ Route::group([
         Route::resource('permissions', 'App\Http\Controllers\Dashboard\PermissionsController');
         Route::resource('customers', 'App\Http\Controllers\Dashboard\CustomersController');
         Route::resource('units', 'App\Http\Controllers\Dashboard\UnitsController');
+        Route::resource('categories', 'App\Http\Controllers\Dashboard\CategoriesController');
 
         
         Route::get('profile/edit', 'App\Http\Controllers\Dashboard\ProfileController@editProfile')
