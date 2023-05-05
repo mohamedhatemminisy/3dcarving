@@ -8,9 +8,11 @@
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"> {{trans('admin.home')}} </a>
+                            <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"> {{trans('admin.home')}}
+                                </a>
                             </li>
-                            <li class="breadcrumb-item"><a href="{{route('machines.index')}}"> {{trans('admin.machines')}}
+                            <li class="breadcrumb-item"><a href="{{route('machines.index')}}">
+                                    {{trans('admin.machines')}}
                                 </a>
                             </li>
                             <li class="breadcrumb-item active"> {{trans('admin.edit')}} - {{$machine -> name}}
@@ -27,7 +29,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> {{trans('admin.edit')}} - {{$machine -> name}} </h4>
+                                <h4 class="card-title" id="basic-layout-form"> {{trans('admin.edit')}} - {{$machine ->
+                                    name}} </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -47,15 +50,54 @@
                                         @csrf
                                         <div class="mb-3">
                                             <label for="name" class="form-label">{{trans('admin.name')}}</label>
-                                            <input value="{{ $machine->name }}" type="text" class="form-control" name="name" placeholder="Name" required>
+                                            <input value="{{ $machine->name }}" type="text" class="form-control"
+                                                name="name" placeholder="Name" required>
 
                                             @if ($errors->has('name'))
                                             <span class="text-danger text-left">{{ $errors->first('name') }}</span>
                                             @endif
                                         </div>
-                                      
+
+                                        <div class="mb-3">
+                                            <label for="machine_type_id"> @lang('admin.mach_types')
+                                            </label>
+                                            <select name="machine_type_id" class="select2 form-control">
+                                                <option disabled selected> @lang('admin.mach_types')</option>
+                                                @if($types && $types -> count() > 0)
+                                                @foreach($types as $type)
+                                                <option value="{{$type -> id }}" @if($machine->machine_type_id ==
+                                                    $type->id) selected @endif>{{$type -> name}}</option>
+                                                @endforeach
+                                                @endif
+                                            </select>
+                                            @error('machine_type_id')
+                                            <span class="text-danger"> {{$message}}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="status"> @lang('admin.status')
+                                            </label>
+                                            <select name="status" class="form-control">
+                                                <option disabled selected> @lang('admin.select')</option>
+
+                                                <option value="active" @if($machine->status ==
+                                                    'active') selected @endif>
+                                                    active</option>
+                                                <option value="working"  @if($machine->status ==
+                                                    'working') selected @endif >working</option>
+                                                <option value="broken"  @if($machine->status ==
+                                                    'broken') selected @endif>
+                                                    broken</option>
+                                            </select>
+                                            @error('status')
+                                            <span class="text-danger"> {{$message}}</span>
+                                            @enderror
+                                        </div>
+
                                         <div class="form-actions">
-                                            <button type="button" class="btn btn-warning mr-1" onclick="history.back();">
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                onclick="history.back();">
                                                 <i class="ft-x"></i> {{trans('admin.reset')}}
                                             </button>
                                             <button type="submit" class="btn btn-primary">

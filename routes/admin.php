@@ -35,7 +35,9 @@ Route::group([
         Route::resource('units', 'App\Http\Controllers\Dashboard\UnitsController');
         Route::resource('categories', 'App\Http\Controllers\Dashboard\CategoriesController');
         Route::resource('machines', 'App\Http\Controllers\Dashboard\MachinesController');
+        Route::resource('mach_types', 'App\Http\Controllers\Dashboard\MachTypesController');
 
+        
         
         Route::get('profile/edit', 'App\Http\Controllers\Dashboard\ProfileController@editProfile')
             ->name('edit.profile');

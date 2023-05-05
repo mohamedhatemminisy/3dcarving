@@ -12,9 +12,9 @@
                             </li>
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">
 
-                                    {{trans('admin.machines')}} </a>
+                                    {{trans('admin.mach_types')}} </a>
                             </li>
-                            <li class="breadcrumb-item active">{{trans('admin.create_machine')}}
+                            <li class="breadcrumb-item active">{{trans('admin.create_mach_type')}}
                             </li>
                         </ol>
                     </div>
@@ -28,7 +28,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"> {{trans('admin.create_machine')}} </h4>
+                                <h4 class="card-title" id="basic-layout-form"> {{trans('admin.create_mach_type')}} </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -43,56 +43,19 @@
                             @include('dashboard.includes.alerts.errors')
                             <div class="card-content collapse show">
                                 <div class="card-body">
-                                    <form class="form" action="{{route('machines.store')}}" method="POST"
-                                        enctype="multipart/form-data">
+                                <form class="form" action="{{route('mach_types.store')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
                                             <label for="name" class="form-label">{{trans('admin.name')}}</label>
-                                            <input value="{{ old('name') }}" type="text" class="form-control"
-                                                name="name" placeholder="{{trans('admin.name')}}">
+                                            <input value="{{ old('name') }}" type="text" class="form-control" name="name" placeholder="{{trans('admin.name')}}">
 
                                             @if ($errors->has('name'))
                                             <span class="text-danger text-left">{{ $errors->first('name') }}</span>
                                             @endif
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="machine_type_id"> @lang('admin.mach_types')
-                                            </label>
-                                            <select name="machine_type_id" class="form-control">
-                                                <option disabled selected> @lang('admin.select')</option>
-                                                @if($types && $types -> count() > 0)
-                                                @foreach($types as $type)
-                                                <option value="{{$type -> id }}" {{ (old("machine_type_id")==$type->id ?
-                                                    "selected":"") }}>{{$type -> name}}</option>
-                                                @endforeach
-                                                @endif
-                                            </select>
-                                            @error('machine_type_id')
-                                            <span class="text-danger"> {{$message}}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="status"> @lang('admin.status')
-                                            </label>
-                                            <select name="status" class="form-control">
-                                                <option disabled selected> @lang('admin.select')</option>
-
-                                                <option value="active" {{ (old("status")=='active' ? "selected" :"") }}>
-                                                    active</option>
-                                                <option value="working" {{ (old("status")=='working' ? "selected" :"")
-                                                    }}>working</option>
-                                                <option value="broken" {{ (old("status")=='broken' ? "selected" :"") }}>
-                                                    broken</option>
-                                            </select>
-                                            @error('status')
-                                            <span class="text-danger"> {{$message}}</span>
-                                            @enderror
-                                        </div>
-
+                                      
                                         <div class="form-actions">
-                                            <button type="button" class="btn btn-warning mr-1"
-                                                onclick="history.back();">
+                                            <button type="button" class="btn btn-warning mr-1" onclick="history.back();">
                                                 <i class="ft-x"></i> {{trans('admin.reset')}}
                                             </button>
                                             <button type="submit" class="btn btn-primary">

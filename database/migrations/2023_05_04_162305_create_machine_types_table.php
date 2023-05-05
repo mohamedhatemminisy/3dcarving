@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('machines', function (Blueprint $table) {
+        Schema::create('machine_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->enum('status', ['active', 'working','broken']);
-            $table->integer('machine_type_id')->unsigned();
-            $table->foreign('machine_type_id')->references('id')->on('machine_types')->onDelete('cascade');
+            $table->string('name');         
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('machines');
+        Schema::dropIfExists('machine_types');
     }
 };

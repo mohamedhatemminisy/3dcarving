@@ -5,13 +5,13 @@
     <div class="content-wrapper">
         <div class="content-header row">
             <div class="content-header-left col-md-6 col-12 mb-2">
-                <h3 class="content-header-title"> {{trans('admin.machines')}} </h3>
+                <h3 class="content-header-title"> {{trans('admin.mach_types')}} </h3>
                 <div class="row breadcrumbs-top">
                     <div class="breadcrumb-wrapper col-12">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"> {{trans('admin.home')}} </a>
                             </li>
-                            <li class="breadcrumb-item"> {{trans('admin.machines')}}
+                            <li class="breadcrumb-item"> {{trans('admin.mach_types')}}
                             </li>
                         </ol>
                     </div>
@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> {{trans('admin.machines')}} </h4>
+                                <h4 class="card-title"> {{trans('admin.mach_types')}} </h4>
                                 <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -45,28 +45,23 @@
                                         <thead>
                                             <tr>
                                                 <th> {{trans('admin.name')}} </th>
-                                                <th> {{trans('admin.mach_types')}} </th>
-                                                <th> {{trans('admin.status')}} </th>
                                                 <th> {{trans('admin.action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($machines as $value)
+                                            @foreach($mach_types as $value)
                                             <tr>
                                                 <td>{{ $value->name }}</td>
-                                                <td>{{ $value->machineType->name }}</td>
-                                                <td>{{ $value->status }}</td>
-
                                                 <td>
-                                                    @include('dashboard.components.table-control', ['permission' => 'machines',
-                                                    'name'=>'machines', 'value'=>$value])
+                                                    @include('dashboard.components.table-control', ['permission' => 'mach_types',
+                                                    'name'=>'mach_types', 'value'=>$value])
                                                 </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                     <div class="justify-content-center d-flex">
-                                        {{ $machines->links('vendor.pagination.custom') }}
+                                        {{ $mach_types->links('vendor.pagination.custom') }}
                                     </div>
                                 </div>
                             </div>

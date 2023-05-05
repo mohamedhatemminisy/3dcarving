@@ -130,6 +130,26 @@
                                 </ul>
                         </li>
                         @endcan
+                        @canany(['mach_types.create', 'mach_types.index'])
+                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
+                                                data-i18n="nav.horz_nav.main">{{trans('admin.mach_types')}}</span></a>
+                                <ul class="menu-content">
+                                        @can('mach_types.create')
+                                        <li><a class="menu-item" href="{{route('mach_types.create')}}"
+                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                                                        {{trans('admin.create_mach_type')}}</a>
+                                        </li>
+                                        @endcan
+                                        @can('mach_types.index')
+                                        <li><a class="menu-item" href="{{route('mach_types.index')}}"
+                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                                                        {{trans('admin.show_mach_types')}}</a>
+                                        </li>
+                                        @endcan
+                                </ul>
+                        </li>
+                        @endcan
+
                         @canany(['machines.create', 'machines.index'])
                         <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
                                                 data-i18n="nav.horz_nav.main">{{trans('admin.machines')}}</span></a>

@@ -3,6 +3,7 @@
 return [
     'updated'        => 'تم تحديث البيانات بنجاح',
     'welcome'        => 'مرحبا',
+    'select'         => 'اختر',
     'languages'      => 'اللغات',
     'edit_profile'   => 'تعديل الملف الشخصي',
     'logout'         => 'تسجيل الخروج',
@@ -51,6 +52,10 @@ return [
     'machines'        => 'الآلات',
     'create_machine'  => 'اضافة الآلة',
     'show_machines'   => 'عرض الآلات',
+    'mach_types'        => 'انواع الآلات',
+    'create_mach_type'  => 'اضافة نوع',
+    'show_mach_types'   => 'عرض انواع الآلات',
+
 
     'error_message' => [
         'slug_unique'           =>  'هذا الاسم موجود من قبل',
@@ -123,6 +128,8 @@ return [
         'shipping_pice_min' => 'سعر الشحن يجب ان  لا يقل عن صفر',
         'address_required' => 'العنوان مطلوب',
         'whatsapp_required' => 'الواتساب مطلوب',
+        'status_required'   => 'الحاله مطلوبه ',
+        'machine_type_id_required' => 'نوع الاله مطلوب',
     ],
     'shipping_pice_added' => 'تم اضافة سعر الشحن ',
     'tests'          => 'الاختبارات',

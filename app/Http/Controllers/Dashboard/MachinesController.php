@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\MachineRequest;
 use App\Models\Machine;
+use App\Models\MachineType;
 use Illuminate\Http\Request;
 
 class MachinesController extends Controller
@@ -14,20 +16,22 @@ class MachinesController extends Controller
     public function index()
     {
         $machines = Machine::latest()->paginate(PAGINATION_COUNT);
-        return view('dashboard.machines.index', compact('machines'));    }
+        return view('dashboard.machines.index', compact('machines'));   
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('dashboard.machines.create');
+        $types = MachineType::get();
+        return view('dashboard.machines.create',compact('types'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MachineRequest $request)
     {
         $data = $request->all();
         Machine::create($data);
@@ -50,13 +54,14 @@ class MachinesController extends Controller
     public function edit(string $id)
     {
         $machine = Machine::orderBy('id', 'DESC')->find($id);
-        return view('dashboard.machines.edit', compact('machine'));
+        $types = MachineType::get();
+        return view('dashboard.machines.edit', compact('machine','types'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(MachineRequest $request, string $id)
     {
         $machine = Machine::find($id);
         $data = $request->all();

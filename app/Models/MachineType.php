@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Machine extends Model
+class MachineType extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'machine_type_id',
-        'status'
+        'name'
     ];
-    public function machineType(){
-        return $this->belongsTo(MachineType::class);
-    }
 }

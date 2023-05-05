@@ -3,6 +3,7 @@
 return [
     'updated'       => 'Data updated successfully',
     'welcome'        => 'Welcome',
+    'select'         => 'Select ',
     'languages'      => 'Languages',
     'edit_profile'   => 'Edit profile',
     'logout'         => 'Logout',
@@ -51,6 +52,11 @@ return [
     'machines'        => 'Machines',
     'create_machine'  => 'Create Machine',
     'show_machines'   => 'Show Machines',
+
+    'mach_types'        => 'Machine types',
+    'create_mach_type'  => 'Create Machine type',
+    'show_mach_types'   => 'Show Machine types',
+
 
     'error_message' => [
         'slug_unique'           =>  'slug must be unique',
@@ -123,6 +129,8 @@ return [
         'shipping_pice_min' => 'The shipping pice must be at least 0.',
         'address_required' => 'Address required',
         'whatsapp_required' => 'Whatsapp required',
+        'status_required'   => 'status required',
+        'machine_type_id_required' => 'machine type required',
     ],
     'shipping_pice_added' => 'shipping pice added',
     'tests'          => 'Tests',
