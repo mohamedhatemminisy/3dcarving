@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/arcarving/public_html
+    - /bin/cp -R * $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - /opt/cpanel/ea-php74/root/usr/bin/php artisan config:cache
+    - /opt/cpanel/ea-php74/root/usr/bin/php artisan migrate --force
+    - /opt/cpanel/ea-php74/root/usr/bin/php artisan route:cache
