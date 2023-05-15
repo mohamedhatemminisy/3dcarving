@@ -8,9 +8,9 @@ function getFolder()
     return app()->getLocale() == 'ar' ? 'css-rtl' : 'css';
 }
 
- if(!function_exists('upload_image'))
+ if(!function_exists('upload_file'))
  {
-     function upload_image($file, $prefix)
+     function upload_file($file, $prefix)
      {
          if($file){
              $files = $file;

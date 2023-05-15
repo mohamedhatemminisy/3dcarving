@@ -48,7 +48,7 @@
                                                 <th> {{trans('admin.email')}} </th>
                                                 <th> {{trans('admin.phone')}}</th>
                                                 <th> {{trans('admin.whatsapp')}}</th>
-                                                <th> {{trans('admin.address')}}</th>
+                                                <th> {{trans('admin.added_by')}}</th>
                                                 <th> {{trans('admin.action')}}</th>
                                             </tr>
                                         </thead>
@@ -59,7 +59,7 @@
                                                 <td>{{ $value->email }}</td>
                                                 <td>{{ $value->phone }}</td>
                                                 <td>{{ $value->whatsapp }}</td>
-                                                <td>{{ $value->address }}</td>
+                                                <td>{{ $value->user->name }}</td>
                                                 <td>
                                                     @include('dashboard.components.table-control', ['permission' => 'customers',
                                                     'name'=>'customers', 'value'=>$value])

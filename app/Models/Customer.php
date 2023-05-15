@@ -18,4 +18,9 @@ class Customer extends Model
         'last_order_date',
         'added_by'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'added_by');
+    }
 }

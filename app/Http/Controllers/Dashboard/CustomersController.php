@@ -14,7 +14,13 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = Customer::latest()->paginate(PAGINATION_COUNT);
+        $user = auth()->user();
+        $role =  $user->getRoleNames()[0];
+        if($role  == 'seller'){
+            $customers = Customer::where('added_by',auth()->user()->id)->latest()->paginate(PAGINATION_COUNT);
+        }elseif($role == 'super_admin'){
+            $customers = Customer::latest()->paginate(PAGINATION_COUNT);
+        }
         return view('dashboard.customers.index', compact('customers'));
     }
 

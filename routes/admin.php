@@ -36,9 +36,28 @@ Route::group([
         Route::resource('categories', 'App\Http\Controllers\Dashboard\CategoriesController');
         Route::resource('machines', 'App\Http\Controllers\Dashboard\MachinesController');
         Route::resource('mach_types', 'App\Http\Controllers\Dashboard\MachTypesController');
+        Route::resource('orders', 'App\Http\Controllers\Dashboard\OrdersController');
 
+        Route::post('price', 'App\Http\Controllers\Dashboard\OrdersController@updatePrice')
+        ->name('update.price');
+        Route::post('price_status', 'App\Http\Controllers\Dashboard\OrdersController@updatePriceStatus')
+        ->name('update.price.status');
+        Route::post('order_status', 'App\Http\Controllers\Dashboard\OrdersController@order_status')
+        ->name('order.status');
+        Route::post('order_designer', 'App\Http\Controllers\Dashboard\OrdersController@order_designer')
+        ->name('order.designer');
+        Route::post('update_order_status', 'App\Http\Controllers\Dashboard\OrdersController@update_order_status')
+        ->name('update.design.status');
+        Route::post('order_accountant', 'App\Http\Controllers\Dashboard\OrdersController@order_accountant')
+        ->name('order.accountant');
+        Route::post('order_material', 'App\Http\Controllers\Dashboard\OrdersController@order_material')
+        ->name('order.material');
+        Route::post('operation_status', 'App\Http\Controllers\Dashboard\OrdersController@operation_status')
+        ->name('update.operation.status');
+        Route::post('order_machine', 'App\Http\Controllers\Dashboard\OrdersController@order_machine')
+        ->name('order.machine');
         
-        
+
         Route::get('profile/edit', 'App\Http\Controllers\Dashboard\ProfileController@editProfile')
             ->name('edit.profile');
         Route::put('profile/update', 'App\Http\Controllers\Dashboard\ProfileController@updateprofile')

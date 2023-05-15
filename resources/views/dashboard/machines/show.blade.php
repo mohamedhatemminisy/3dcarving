@@ -41,7 +41,7 @@
                                 <div class="tab-content">
                                     <div class="col form-group">
                                         <label>@lang('admin.name') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{ $machine->name  }}
                                         </p>
                                     </div>
@@ -50,7 +50,7 @@
                                 <div class="tab-content">
                                     <div class="col form-group">
                                         <label>@lang('admin.mach_types') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{ $machine->machineType->name  }}
                                         </p>
                                     </div>
@@ -58,7 +58,7 @@
                                 <div class="tab-content">
                                     <div class="col form-group">
                                         <label>@lang('admin.status') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{ $machine->status  }}
                                         </p>
                                     </div>

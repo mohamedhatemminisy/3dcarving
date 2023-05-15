@@ -41,19 +41,19 @@
                                 <div class="tab-content">
                                     <div class="col form-group">
                                         <label>@lang('admin.name') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{ $user->name  }}
                                         </p>
                                     </div>
                                     <div class="col form-group">
                                         <label>@lang('admin.email') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{$user->email}}
                                         </p>
                                     </div>
                                     <div class="col form-group">
                                         <label>@lang('admin.phone') </label>
-                                        <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                        <p class="alert  " style="background-color:rgb(26,60,119)">
                                             {{$user->phone}}
                                         </p>
                                     </div>
@@ -61,7 +61,7 @@
                                         <label>@lang('admin.role') </label>
                                         <td>
                                             @foreach($user->roles as $role)
-                                            <p class="alert alert-info" style="background-color:rgb(26,60,119)">
+                                            <p class="alert  " style="background-color:rgb(26,60,119)">
                                                 {{ $role->name }}
                                             </p>
                                             @endforeach

@@ -149,7 +149,6 @@
                                 </ul>
                         </li>
                         @endcan
-
                         @canany(['machines.create', 'machines.index'])
                         <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
                                                 data-i18n="nav.horz_nav.main">{{trans('admin.machines')}}</span></a>
@@ -169,6 +168,26 @@
                                 </ul>
                         </li>
                         @endcan
+                        @canany(['orders.create', 'orders.index'])
+                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
+                                                data-i18n="nav.horz_nav.main">{{trans('admin.orders')}}</span></a>
+                                <ul class="menu-content">
+                                        @can('orders.create')
+                                        <li><a class="menu-item" href="{{route('orders.create')}}"
+                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                                                        {{trans('admin.create_order')}}</a>
+                                        </li>
+                                        @endcan
+                                        @can('orders.index')
+                                        <li><a class="menu-item" href="{{route('orders.index')}}"
+                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
+                                                        {{trans('admin.show_orders')}}</a>
+                                        </li>
+                                        @endcan
+                                </ul>
+                        </li>
+                        @endcan
+
                 </ul>
         </div>
 </div>
