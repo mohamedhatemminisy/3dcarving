@@ -38,10 +38,9 @@
                             </div>
                             @include('dashboard.includes.alerts.success')
                             @include('dashboard.includes.alerts.errors')
-
-                            <div class="card-content collapse show">
-                                <div class="card-body card-dashboard">
-                                    <table class="table display nowrap table-striped table-bordered ">
+                            <div class="card-body card-dashboard" style="width: 100%; overflow-x: auto;">
+                                <div class="table-responsive">
+                                  <table class="table display nowrap table-striped table-bordered w-100">
                                         <thead>
                                             <tr>
                                                 <th> {{trans('admin.name')}} </th>
