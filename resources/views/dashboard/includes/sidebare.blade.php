@@ -72,122 +72,48 @@
                         </li>
                         @endcan
 
-                        @canany(['customers.create', 'customers.index'])
+                        
+                        @canany(['parties.create', 'parties.index'])
                         <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.customers')}}</span></a>
+                                                data-i18n="nav.horz_nav.main">{{trans('admin.parties')}}</span></a>
                                 <ul class="menu-content">
-                                        @can('customers.create')
-                                        <li><a class="menu-item" href="{{route('customers.create')}}"
+                                        @can('parties.create')
+                                        <li><a class="menu-item" href="{{route('parties.create')}}"
                                                         data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_customer')}}</a>
+                                                        {{trans('admin.create_party')}}</a>
                                         </li>
                                         @endcan
-                                        @can('customers.index')
-                                        <li><a class="menu-item" href="{{route('customers.index')}}"
+                                        @can('parties.index')
+                                        <li><a class="menu-item" href="{{route('parties.index')}}"
                                                         data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_customers')}}</a>
+                                                        {{trans('admin.show_parties')}}</a>
+
                                         </li>
                                         @endcan
                                 </ul>
                         </li>
                         @endcan
 
-                        @canany(['units.create', 'units.index'])
+                        @canany(['donations.create', 'donations.index'])
                         <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.units')}}</span></a>
+                                                data-i18n="nav.horz_nav.main">{{trans('admin.donations')}}</span></a>
                                 <ul class="menu-content">
-                                        @can('units.create')
-                                        <li><a class="menu-item" href="{{route('units.create')}}"
+                                        @can('donations.create')
+                                        <li><a class="menu-item" href="{{route('donations.create')}}"
                                                         data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_unit')}}</a>
+                                                        {{trans('admin.create_donation')}}</a>
                                         </li>
                                         @endcan
-                                        @can('units.index')
-                                        <li><a class="menu-item" href="{{route('units.index')}}"
+                                        @can('donations.index')
+                                        <li><a class="menu-item" href="{{route('donations.index')}}"
                                                         data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_units')}}</a>
-                                        </li>
-                                        @endcan
-                                </ul>
-                        </li>
-                        @endcan
-                        @canany(['categories.create', 'categories.index'])
-                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.categories')}}</span></a>
-                                <ul class="menu-content">
-                                        @can('categories.create')
-                                        <li><a class="menu-item" href="{{route('categories.create')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_category')}}</a>
-                                        </li>
-                                        @endcan
-                                        @can('categories.index')
-                                        <li><a class="menu-item" href="{{route('categories.index')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_categories')}}</a>
-                                        </li>
-                                        @endcan
-                                </ul>
-                        </li>
-                        @endcan
-                        @canany(['mach_types.create', 'mach_types.index'])
-                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.mach_types')}}</span></a>
-                                <ul class="menu-content">
-                                        @can('mach_types.create')
-                                        <li><a class="menu-item" href="{{route('mach_types.create')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_mach_type')}}</a>
-                                        </li>
-                                        @endcan
-                                        @can('mach_types.index')
-                                        <li><a class="menu-item" href="{{route('mach_types.index')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_mach_types')}}</a>
-                                        </li>
-                                        @endcan
-                                </ul>
-                        </li>
-                        @endcan
-                        @canany(['machines.create', 'machines.index'])
-                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.machines')}}</span></a>
-                                <ul class="menu-content">
-                                        @can('machines.create')
-                                        <li><a class="menu-item" href="{{route('machines.create')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_machine')}}</a>
-                                        </li>
-                                        @endcan
-                                        @can('machines.index')
-                                        <li><a class="menu-item" href="{{route('machines.index')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_machines')}}</a>
-                                        </li>
-                                        @endcan
-                                </ul>
-                        </li>
-                        @endcan
-                        @canany(['orders.create', 'orders.index'])
-                        <li class=" nav-item"><a href="#"><i class="la la-arrows-h"></i><span class="menu-title"
-                                                data-i18n="nav.horz_nav.main">{{trans('admin.orders')}}</span></a>
-                                <ul class="menu-content">
-                                        @can('orders.create')
-                                        <li><a class="menu-item" href="{{route('orders.create')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.create_order')}}</a>
-                                        </li>
-                                        @endcan
-                                        @can('orders.index')
-                                        <li><a class="menu-item" href="{{route('orders.index')}}"
-                                                        data-i18n="nav.horz_nav.horizontal_navigation_types.main">
-                                                        {{trans('admin.show_orders')}}</a>
-                                        </li>
-                                        @endcan
-                                </ul>
-                        </li>
-                        @endcan
+                                                        {{trans('admin.show_donations')}}</a>
 
+                                        </li>
+                                        @endcan
+                                </ul>
+                        </li>
+                        @endcan
                 </ul>
         </div>
 </div>

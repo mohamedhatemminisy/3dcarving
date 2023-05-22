@@ -72,10 +72,14 @@ return [
     'thickness'       => 'Thickness',
     'height'          => 'Height',
     'width'           => 'Width',
-
+    'parties'         => 'parties ',
+    'create_party'  => 'create party ',
+    'show_parties'   => 'show parties ',
     'price_status_updated' => 'price Status Updated',
     'price_updated'   => 'Price Updated Successfully',
-
+    'donations' => 'Donations',
+    'create_donation' => 'Create donation',
+    'show_donations' => 'Show donations',
     'mach_types'        => 'Machine types',
     'create_mach_type'  => 'Create Machine type',
     'show_mach_types'   => 'Show Machine types',
@@ -84,7 +88,11 @@ return [
     'show_orders'   => 'Show orders',
     'code'          => 'Order code',
     'files'         => 'Files',
-
+    'collection_date' => 'Collection date',
+    'start_date'  => 'Start date',
+    'end_date' => 'End date',
+    'price' => 'price',
+    'donatiors' => 'Donatiors',
     'error_message' => [
         'slug_unique'           =>  'slug must be unique',
         'phone_required'        =>  'phone is required',
