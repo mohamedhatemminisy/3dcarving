@@ -119,7 +119,14 @@
                                             <span class="text-danger"> {{$message}}</span>
                                             @enderror
                                         </div>
-                                        
+                                         <div class="mb-3">
+                                            <label>@lang('admin.files') <span class="text-danger">*</span></label>
+                                            <input type="file" name="files[]" placeholder="@lang('admin.files')"
+                                                class="form-control" multiple>
+                                            @error("files")
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
                                         <div class="form-actions">
                                             <button type="button" class="btn btn-warning mr-1" onclick="history.back();">
                                                 <i class="ft-x"></i> {{trans('admin.reset')}}

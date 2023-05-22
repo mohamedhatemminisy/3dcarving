@@ -19,6 +19,21 @@ class Donation extends Model
         'donator_id',
         'party_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'added_by');
+    }
+
+    public function donator()
+    {
+        return $this->belongsTo(User::class, 'donator_id');
+    }
+
+    public function party()
+    {
+        return $this->belongsTo(Party::class, 'party_id');
+    }
 }
 
 

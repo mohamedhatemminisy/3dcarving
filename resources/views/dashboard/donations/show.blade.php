@@ -44,8 +44,55 @@
                                         <p class="alert  ">
                                             {{ $donation->name  }}
                                         </p>
-                                    </div>
-                                   
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.collection_date') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->collection_date  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.start_date') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->start_date  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.end_date') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->end_date  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.price') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->price  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.address') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->address  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.added_by') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->user->name  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.donator') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->donator->name  }}
+                                        </p>
+                                    </div><hr>
+                                    <div class="col form-group">
+                                        <label>@lang('admin.party') </label>
+                                        <p class="alert  ">
+                                            {{ $donation->party->name  }}
+                                        </p>
+                                    </div><hr>
                                 </div>
                             </div>
                         </div>
